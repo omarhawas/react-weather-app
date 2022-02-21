@@ -4,7 +4,7 @@ const TOKEN = process.env.REACT_APP_WEATHER_API_KEY;
 export const getGeoCode = async (city) => {
   try {
     const response = await axios.get(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${TOKEN}
+      `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${TOKEN}
       `
     );
     return response;
