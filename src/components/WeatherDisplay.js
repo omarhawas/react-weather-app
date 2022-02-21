@@ -26,6 +26,9 @@ const WeatherDisplay = (props) => {
         <Card.Title>{props.weatherData.city}</Card.Title>
         <Card.Text>{kelvinToCelsius(props.weatherData.temp)}</Card.Text>
         <Card.Text>{kelvinToCelsius(props.weatherData.feelsLike)}</Card.Text>
+        <Button onClick={() => props.removeWeatherData(props.weatherData.city)}>
+          Remove
+        </Button>
         {props.weatherData.alerts?.map((alert, idx) => {
           const popover = (
             <Popover id="popover-basic">

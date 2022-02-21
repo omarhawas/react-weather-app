@@ -11,6 +11,13 @@ function App() {
     setWeatherData([...weatherData, item]);
   }
 
+  function removeWeatherData(city) {
+    const newWeatherData = weatherData.filter((item) => {
+      return item.city !== city;
+    });
+    setWeatherData(newWeatherData);
+  }
+
   return (
     <div className="App">
       <Search pushWeatherData={pushWeatherData} weatherData={weatherData} />
@@ -18,7 +25,10 @@ function App() {
         {weatherData.map((item, index) => {
           return (
             <Col key={index}>
-              <WeatherDisplay weatherData={item} />
+              <WeatherDisplay
+                removeWeatherData={removeWeatherData}
+                weatherData={item}
+              />
             </Col>
           );
         })}
