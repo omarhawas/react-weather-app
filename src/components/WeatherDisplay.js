@@ -24,8 +24,14 @@ const WeatherDisplay = (props) => {
         )}
       >
         <Card.Title>{props.weatherData.city}</Card.Title>
-        <Card.Text>{kelvinToCelsius(props.weatherData.temp)}</Card.Text>
-        <Card.Text>{kelvinToCelsius(props.weatherData.feelsLike)}</Card.Text>
+        <Card.Text>
+          Temperature: {kelvinToCelsius(props.weatherData.temp)}°C
+        </Card.Text>
+        <Card.Text>
+          Feels Like: {kelvinToCelsius(props.weatherData.feelsLike)}°C
+        </Card.Text>
+        <Card.Text>Humidity: {props.weatherData.humidity}%</Card.Text>
+
         <Button onClick={() => props.removeWeatherData(props.weatherData.city)}>
           Remove
         </Button>
@@ -39,9 +45,10 @@ const WeatherDisplay = (props) => {
 
           return (
             <OverlayTrigger
+              rootClose
               key={idx}
               trigger="click"
-              placement="right"
+              placement="auto"
               overlay={popover}
             >
               <Button variant="success">Alert {idx + 1}</Button>

@@ -38,13 +38,13 @@
 }
 
 .background-red {
-  background-color: red;
+  background-color: rgb(231, 123, 123);
 }
 
 .background-blue {
-  background-color: blue;
+  background-color: rgb(147, 147, 216);
 }
 
 .background-yellow {
-  background-color: yellow;
+  background-color: rgb(240, 240, 140);
 }

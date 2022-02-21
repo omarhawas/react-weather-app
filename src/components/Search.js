@@ -22,11 +22,13 @@ function Search(props) {
     const weatherResponse = await getWeather(lat, lon);
     const temp = weatherResponse.data.current.temp;
     const feelsLike = weatherResponse.data.current.feels_like;
+    const humidity = weatherResponse.data.current.humidity;
     const alerts = weatherResponse.data.alerts;
     props.pushWeatherData({
       city: city,
       temp: temp,
       feelsLike: feelsLike,
+      humidity: humidity,
       alerts: alerts,
     });
     console.log(city);
