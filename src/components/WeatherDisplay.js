@@ -5,10 +5,24 @@ function kelvinToCelsius(kelvin) {
   return Math.floor(parseInt(kelvin - 273.15));
 }
 
+function assignBackgroundClass(temp) {
+  if (temp < 10) {
+    return "background-blue";
+  } else if (temp > 20) {
+    return "background-red";
+  } else {
+    return "background-yellow";
+  }
+}
+
 const WeatherDisplay = (props) => {
   return (
     <Card style={{ width: "26rem" }}>
-      <Card.Body>
+      <Card.Body
+        className={assignBackgroundClass(
+          kelvinToCelsius(props.weatherData.temp)
+        )}
+      >
         <Card.Title>{props.weatherData.city}</Card.Title>
         <Card.Text>{kelvinToCelsius(props.weatherData.temp)}</Card.Text>
         <Card.Text>{kelvinToCelsius(props.weatherData.feelsLike)}</Card.Text>

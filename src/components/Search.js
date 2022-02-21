@@ -10,6 +10,12 @@ function Search(props) {
   }
 
   async function handleSearch() {
+    const foundCity = props.weatherData.find((item) => {
+      return item.city === city;
+    });
+    if (foundCity) {
+      return;
+    }
     const response = await getGeoCode(city);
     const lat = response.data[0].lat;
     const lon = response.data[0].lon;

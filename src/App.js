@@ -13,12 +13,12 @@ function App() {
 
   return (
     <div className="App">
-      <Search pushWeatherData={pushWeatherData} />
+      <Search pushWeatherData={pushWeatherData} weatherData={weatherData} />
       <Row xs={1} md={2} lg={3} className="g-4">
         {weatherData.map((item, index) => {
           return (
-            <Col>
-              <WeatherDisplay weatherData={item} key={index} />
+            <Col key={index}>
+              <WeatherDisplay weatherData={item} />
             </Col>
           );
         })}
