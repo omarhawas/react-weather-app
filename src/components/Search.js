@@ -17,7 +17,7 @@ function Search(props) {
     const temp = weatherResponse.data.current.temp;
     const feelsLike = weatherResponse.data.current.feels_like;
     const alerts = weatherResponse.data.alerts;
-    props.setWeatherData({
+    props.pushWeatherData({
       city: city,
       temp: temp,
       feelsLike: feelsLike,
